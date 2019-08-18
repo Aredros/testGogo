@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <base href="/" />
-    <script src="https://gogocarto.fr/js/gogocarto.min.js"></script>
     <link
       rel="stylesheet"
       href="https://gogocarto.fr/assets/css/gogocarto.min.css"
     />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script type="text/javascript" src="./jquery.js"></script>
+    <script src="https://gogocarto.fr/js/gogocarto.min.js"></script>
+
     <title>Hello Webpack</title>
   </head>
   <body>
@@ -17,6 +19,16 @@
       <h1>Hello Webpack</h1>
       <div id="gogocarto"></div>
     </div>
+    <script>
+      $(document).ready(function() {
+        carto = goGoCarto("#gogocarto", {
+          data: {
+            taxonomy: taxonomy,
+            elements: elements
+          }
+        });
+      });
+    </script>
     <script src="./bundle.js"></script>
   </body>
 </html>
